@@ -16,6 +16,7 @@ driver = webdriver.Chrome(service=s)
 driver.implicitly_wait(5)
 burl = "https://food.grab.com/sg/en/"
 driver.get(url=burl)
+driver.maximize_window()
 
 my_location = WebDriverWait(driver, timeout=10).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[2]/div[3]/div[2]/div/div[2]/div[1]/div/div/ul/li/div/span[1]/input")))
 my_location.send_keys("Plaza Singapura" + Keys.ENTER)
